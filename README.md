@@ -1,11 +1,5 @@
 # RosUi
 
-# How to start ros
-roscore
-roslaunch turtlebot_gazebo turtlebot_world.launch
-roslaunch turtlebot_teleop keyboard_teleop.launch
-roslaunch rosbridge_server rosbridge_websocket.launch
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
 ## Development server
@@ -31,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# How to set up ROS environment
+
+* Start master node: `roscore`
+
+* Launch gazebo with turtlebot world: `roslaunch turtlebot_gazebo turtlebot_world.launch`
+
+* Start keyboard_teleop for turtlebot: `roslaunch turtlebot_teleop keyboard_teleop.launch`
+
+* Start rosbridge_server: `roslaunch rosbridge_server rosbridge_websocket.launch`
+
+* Start web_videoserver: `rosrun web_video_server web_video_server`
