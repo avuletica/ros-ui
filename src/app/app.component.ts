@@ -3,6 +3,8 @@ import {RosService} from './services/RosService';
 import {Pose} from './models/Pose';
 import {Twist} from './models/Twist';
 import {BumperEvent} from './models/BumperEvent';
+import {Orientation} from './models/Orientation';
+import {Point} from './models/Point';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +29,7 @@ export class AppComponent implements OnInit {
 
   initValues(): void {
     this.velocity = new Twist(null, null);
-    this.position = new Pose(null, null);
+    this.position = new Pose(new Orientation(null, null, null, null), new Point(null, null, null));
     this.bumper = new BumperEvent(null, null);
   }
 }
