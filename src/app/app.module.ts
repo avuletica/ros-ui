@@ -1,13 +1,14 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {MaterialModule} from './material.module';
-import {RosService} from './services/RosService';
-import {TopbarComponent} from './topbar/topbar.component';
+import {TopbarComponent} from './components/topbar/topbar.component';
+import {BumpersComponent} from './components/bumpers/bumpers.component';
+import {CamviewComponent} from './components/camview/camview.component';
+
+import {BrowserModule} from '@angular/platform-browser';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { BumpersComponent } from './bumpers/bumpers.component';
-import { CamviewComponent } from './camview/camview.component';
+
+import {RosService} from './services/RosService';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,10 @@ import { CamviewComponent } from './camview/camview.component';
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
     FlexLayoutModule
   ],
   providers: [RosService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

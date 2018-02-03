@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RosService} from '../services/RosService';
+import {RosService} from '../../services/RosService';
 
 @Component({
   selector: 'app-bumpers',

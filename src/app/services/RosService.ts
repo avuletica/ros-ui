@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
+import {Subject} from 'rxjs/Subject';
 import {Twist} from '../models/Twist';
+import {BumperEvent} from '../models/BumperEvent';
 import * as ROSLIB from 'roslib';
 import {Ros, Topic} from 'roslib';
 import {Pose} from '../models/Pose';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-import {BumperEvent} from '../models/BumperEvent';
 
 @Injectable()
 export class RosService {
