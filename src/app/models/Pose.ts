@@ -14,8 +14,9 @@ export class Pose {
     const orientation = message.pose.pose.orientation;
     const position = message.pose.pose.position;
     return new Pose(
-      new Orientation(orientation['x'], orientation['y'], orientation['z'], orientation['w']),
-      new Point(position['x'], position['y'], position['z']));
+      new Orientation(orientation.x, orientation.y, orientation.z, orientation.w),
+      new Point(position.x, position.y, position.z)
+    );
   }
 
   get orientation(): Orientation {
