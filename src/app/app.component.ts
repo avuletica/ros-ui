@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RosService} from './services/RosService';
+import {Pose} from './models/Pose';
+import {Twist} from './models/Twist';
 
 @Component({
   selector: 'app-root',
@@ -7,35 +9,15 @@ import {RosService} from './services/RosService';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  velocityLinearY: number;
-  velocityLinearX: number;
-  velocityLinearZ: number;
-  velocityAngularX: number;
-  velocityAngularY: number;
-  velocityAngularZ: number;
+  velocity: Twist;
+  position: Pose;
 
   constructor(private ros: RosService) {
 
   }
 
   ngOnInit(): void {
-    this.velocityLinearX = 0;
-    this.velocityLinearY = 0;
-    this.velocityLinearZ = 0;
-    this.velocityAngularX = 0;
-    this.velocityAngularY = 0;
-    this.velocityAngularZ = 0;
-  }
-
-  startRos(): void {
-    this.ros.getVelocityObservable().subscribe(velocity => {
-      this.velocityLinearX = velocity.linear.x;
-      this.velocityLinearY = velocity.linear.y;
-      this.velocityLinearZ = velocity.linear.z;
-
-      this.velocityAngularX = velocity.angular.x;
-      this.velocityAngularY = velocity.angular.y;
-      this.velocityAngularZ = velocity.angular.z;
-    });
+    this.ros.getVelocityObservable().subscribe(data => this.velocity = data);
+    this.ros.getPositionObservable().subscribe(data => this.position = data);
   }
 }

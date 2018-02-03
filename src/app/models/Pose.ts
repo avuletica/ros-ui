@@ -11,8 +11,8 @@ export class Pose {
   }
 
   static getInstanceFromMessage(message: any): Pose {
-    const orientation = message['orientation'];
-    const position = message['position'];
+    const orientation = message.pose.pose.orientation;
+    const position = message.pose.pose.position;
     return new Pose(
       new Orientation(orientation['x'], orientation['y'], orientation['z'], orientation['w']),
       new Point(position['x'], position['y'], position['z']));

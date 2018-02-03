@@ -2,21 +2,26 @@
 <div class="app" style="text-align:center">
   <app-topbar></app-topbar>
 
-
   <div fxLayout="row" fxLayoutAlign="center">
     <div class="circle margin-top-50" (click)="startRos()">POWER</div>
   </div>
 
   <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Velocity Linear X: {{velocityLinearX | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Linear Y: {{velocityLinearY | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Linear Z: {{velocityLinearZ | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Linear X: {{velocity?.linear?.x | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Linear Y: {{velocity?.linear?.y | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Linear Z: {{velocity?.linear?.z | number : '1.4'}}</div>
   </div>
 
   <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Velocity Angular X: {{velocityAngularX | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Angular Y: {{velocityAngularY | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Angular Z: {{velocityAngularZ | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Angular X: {{velocity?.angular?.x | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Angular Y: {{velocity?.angular?.y | number : '1.4'}}</div>
+    <div class="custom-font">Velocity Angular Z: {{velocity?.angular?.z | number : '1.4'}}</div>
+  </div>
+
+  <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="custom-font">Position X: {{position?.position?.x | number : '1.4'}}</div>
+    <div class="custom-font">Position Y: {{position?.position?.y | number : '1.4'}}</div>
+    <div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div>
   </div>
 
 
