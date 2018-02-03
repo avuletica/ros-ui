@@ -1,0 +1,24 @@
+#camview {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: inline-block;
+    border-radius: 15px 15px 0 0;
+    background-color: #6E00EB;
+    padding-left: 25px;
+}
+
+.camera-title {
+    background-color: black;
+    color: #6E00EB;
+    padding: 0 5px;
+    float: left;
+}
+
+.camera-container {
+    padding: 5px;
+    background-color: #564FFF;
+    display: inline-block;
+}
