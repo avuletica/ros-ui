@@ -2,10 +2,6 @@
 <div class="app" style="text-align:center">
   <app-topbar></app-topbar>
 
-  <div fxLayout="row" fxLayoutAlign="center">
-    <div class="circle margin-top-50" (click)="startRos()">POWER</div>
-  </div>
-
   <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
     <div class="custom-font">Velocity Linear X: {{velocity?.linear?.x | number : '1.4'}}</div>
     <div class="custom-font">Velocity Linear Y: {{velocity?.linear?.y | number : '1.4'}}</div>
