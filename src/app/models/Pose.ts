@@ -5,7 +5,7 @@ export class Pose {
   private _orientation: Orientation;
   private _position: Point;
 
-  private constructor(orientation: Orientation, position: Point) {
+  constructor(orientation: Orientation, position: Point) {
     this._orientation = orientation;
     this._position = position;
   }

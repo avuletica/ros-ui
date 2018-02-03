@@ -12,7 +12,7 @@ export class BumperEvent {
   private _bumper: number;
   private _state: number;
 
-  private constructor(bumper: number, state: number) {
+  constructor(bumper: number, state: number) {
     this._bumper = bumper;
     this._state = state;
   }

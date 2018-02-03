@@ -19,8 +19,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initValues();
     this.ros.getVelocityObservable().subscribe(data => this.velocity = data);
     this.ros.getPositionObservable().subscribe(data => this.position = data);
     this.ros.getBumperObservable().subscribe(data => this.bumper = data);
+  }
+
+  initValues(): void {
+    this.velocity = new Twist(null, null);
+    this.position = new Pose(null, null);
+    this.bumper = new BumperEvent(null, null);
   }
 }

@@ -5,7 +5,7 @@ export class Twist {
   private _linear: Point;
   private _angular: Point;
 
-  private constructor(linear: Point, angular: Point) {
+  constructor(linear: Point, angular: Point) {
     this._linear = linear;
     this._angular = angular;
   }
