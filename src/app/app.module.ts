@@ -6,11 +6,13 @@ import {MaterialModule} from './material.module';
 import {RosService} from './services/RosService';
 import {TopbarComponent} from './topbar/topbar.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { BumpersComponent } from './bumpers/bumpers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopbarComponent
+    TopbarComponent,
+    BumpersComponent
   ],
   imports: [
     BrowserModule,
