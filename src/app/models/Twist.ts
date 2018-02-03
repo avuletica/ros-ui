@@ -10,7 +10,7 @@ export class Twist {
     this._angular = angular;
   }
 
-  static getInstanceFromMessage(message: any) {
+  static getInstanceFromMessage(message: any): Twist {
     const linear =  message['linear'];
     const angular = message['angular'];
     return new Twist(
