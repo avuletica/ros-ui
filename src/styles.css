@@ -7,3 +7,24 @@ body {
   background-color: black;
   margin: 0px;
 }
+
+.custom-font {
+  color: wheat;
+  font-size: 20px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: wheat;
+  line-height: 150px;
+  text-align: center;
+  background: #9b3c3ccc;
+  cursor: pointer;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
