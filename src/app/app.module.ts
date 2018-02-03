@@ -13,7 +13,7 @@ import { CamviewComponent } from './camview/camview.component';
   declarations: [
     AppComponent,
     TopbarComponent,
-    BumpersComponent
+    BumpersComponent,
     CamviewComponent
   ],
   imports: [

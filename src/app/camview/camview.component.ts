@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-declare function MJPEGCANVAS(): any;
+import {Component, OnInit} from '@angular/core';
+declare const MJPEGCANVAS: any;
 
 @Component({
   selector: 'app-camview',
@@ -14,13 +14,13 @@ export class CamviewComponent implements OnInit {
   ngOnInit() {
     // Create the main viewer.
 
-    var viewer = new MJPEGCANVAS.Viewer({
-      divID : 'mjpeg',
-      host : 'localhost',
-      width : 640,
-      height : 480,
-      topic : '/camera/rgb/image_raw',
-      interval : 25,
+    const viewer = new MJPEGCANVAS.Viewer({
+      divID: 'mjpeg',
+      host: 'localhost',
+      width: 640,
+      height: 480,
+      topic: '/camera/rgb/image_raw',
+      interval: 25,
       quality: 70
     });
   }
