@@ -25,7 +25,7 @@ export class RosService {
     return this._twistSubject.asObservable();
   }
 
-  public getPositionObservable(): Observable<Pose> {
+  public getPoseObservable(): Observable<Pose> {
     return this._poseSubject.asObservable();
   }
 

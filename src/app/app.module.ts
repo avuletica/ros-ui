@@ -4,6 +4,7 @@ import {AppComponent} from './app.component';
 import {TopbarComponent} from './components/topbar/topbar.component';
 import {BumpersComponent} from './components/bumpers/bumpers.component';
 import {CamviewComponent} from './components/camview/camview.component';
+import { PoseviewComponent } from './components/poseview/poseview.component';
 
 import {BrowserModule} from '@angular/platform-browser';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -15,7 +16,8 @@ import {RosService} from './services/RosService';
     AppComponent,
     TopbarComponent,
     BumpersComponent,
-    CamviewComponent
+    CamviewComponent,
+    PoseviewComponent
   ],
   imports: [
     BrowserModule,

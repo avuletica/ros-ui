@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initValues();
     this.ros.getVelocityObservable().subscribe(data => this.velocity = data);
-    this.ros.getPositionObservable().subscribe(data => this.position = data);
+    this.ros.getPoseObservable().subscribe(data => this.position = data);
     this.ros.getBumperObservable().subscribe(data => this.bumper = data);
   }
 
