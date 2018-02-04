@@ -18,9 +18,9 @@ export class BumpersComponent implements OnInit {
       if (event.bumper === 0) {
         this.leftBumperState = event.state;
       } else if (event.bumper === 1) {
-        this.centerBumperState = event.state;
-      } else if (event.bumper === 2) {
         this.rightBumperState = event.state;
+      } else if (event.bumper === 2) {
+        this.centerBumperState = event.state;
       }
 
       this.drawTurtlebot();
