@@ -1,35 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app" style="text-align:center">
-  <app-topbar></app-topbar>
-
-  <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Velocity Linear X: {{velocity?.linear?.x | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Linear Y: {{velocity?.linear?.y | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Linear Z: {{velocity?.linear?.z | number : '1.4'}}</div>
+  <div fxLayout="row" style="margin-bottom: 70px">
+    <app-topbar fxFill></app-topbar>
   </div>
 
-  <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Velocity Angular X: {{velocity?.angular?.x | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Angular Y: {{velocity?.angular?.y | number : '1.4'}}</div>
-    <div class="custom-font">Velocity Angular Z: {{velocity?.angular?.z | number : '1.4'}}</div>
+  <div fxLayout="row" fxLayoutAlign="left">
+    <app-camview fxFlex="40" fxFlexOffset="10"></app-camview>
+    <app-poseview fxFlex="40"></app-poseview>
   </div>
 
-  <app-camview></app-camview>
+  <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 35px; ">
+    <div fxFlex="25" class="custom-border">
+      <div class="custom-card-heading">Bumpers</div>
+      <app-bumpers></app-bumpers>
+    </div>
 
-  <app-poseview></app-poseview>
+    <div fxFlex="25" f class="custom-border">
+      <div class="custom-card-heading" style="margin-bottom: 20px">Angular / Velocity</div>
+      <div class="custom-font"> Velocity Angular X: {{velocity?.angular?.x | number : '1.4'}}</div>
+      <div class="custom-font">Velocity Angular Y: {{velocity?.angular?.y | number : '1.4'}}</div>
+      <div class="custom-font">Velocity Angular Z: {{velocity?.angular?.z | number : '1.4'}}</div>
+      <div class="custom-font">Velocity Linear X: {{velocity?.linear?.x | number : '1.4'}}</div>
+      <div class="custom-font">Velocity Linear Y: {{velocity?.linear?.y | number : '1.4'}}</div>
+      <div class="custom-font">Velocity Linear Z: {{velocity?.linear?.z | number : '1.4'}}</div>
+    </div>
 
-  <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Position X: {{position?.position?.x | number : '1.4'}}</div>
-    <div class="custom-font">Position Y: {{position?.position?.y | number : '1.4'}}</div>
-    <div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div>
+    <div fxFlex="25" class="custom-border">
+      <div class="custom-card-heading" style="margin-bottom: 20px">Position</div>
+      <div class="custom-font">Position X: {{position?.position?.x | number : '1.4'}}</div>
+      <div class="custom-font">Position Y: {{position?.position?.y | number : '1.4'}}</div>
+      <div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div>
+    </div>
   </div>
-
-  <div class="margin-top-50" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="custom-font">Bumper: {{bumper?.bumper}}</div>
-    <div class="custom-font">State: {{bumper?.state}}</div>
-  </div>
-
-  <app-bumpers></app-bumpers>
 
 </div>
 
