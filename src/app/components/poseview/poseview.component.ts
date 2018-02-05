@@ -8,68 +8,73 @@ import { RosService } from '../../services/RosService';
 })
 export class PoseviewComponent implements OnInit {
 
-  private maxDist;
-  private defaultMaxDist = 512;
+  private maxDist = 512;
   private axisColor = 'rgb(72, 51, 234)';
   private turtlebotColor = 'rgb(220,86,1)';
   private scale = 20;
 
   constructor(ros: RosService) {
+
     ros.getPoseObservable().subscribe(event => {    
       const canvas = <HTMLCanvasElement> document.getElementById('canvas-poseview');
       const ctx    = canvas.getContext('2d');
-  
       const xPosition = event.position.x;
       const yPosition = event.position.y;
       const orientation = event.orientation;
       const actualX = this.getActualAxisPosition(xPosition);
       const actualY = this.getActualAxisPosition(yPosition);
-      const angle = this.calculateAngle(orientation)
-
-      this.maxDist = this.defaultMaxDist;
-      // TODO: fix this, it's not working as it should
-      if (this.maxDist < actualX || this.maxDist < actualY) {
-        this.maxDist = this.maxDist * 2;
-      }
-      else if (this.maxDist >= this.defaultMaxDist * 2) {
-        this.maxDist = this.maxDist / 2;
-      }
-      
+      const angle = this.calculateAngle(orientation);
+      this.setScaleIfOutOfBounds(actualX, actualY, canvas);
       this.drawCartesian(canvas);
       this.drawTurtlebot(ctx, actualX, actualY, angle);
     }); }
 
   ngOnInit() {
+    const canvas = <HTMLCanvasElement> document.getElementById('canvas-poseview');
+    const ctx    = canvas.getContext('2d');
   }
 
   private drawCartesian(canvas) {
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const ctxWidth = canvas.width;
+    const ctxHeight = canvas.height;
+    ctx.clearRect(0, 0, ctxWidth, ctxHeight);
     ctx.save();
-    // Retrieve the current canvas element dimensions
-    const ctxWidth : number    = +canvas.getAttribute('width');
-    const ctxHeight : number   = +canvas.getAttribute('height');
 
     this.drawXaxis(ctx, ctxWidth, ctxHeight);
-    //drawXscale(ctxWidth,8);
     this.drawYaxis(ctx, ctxWidth, ctxHeight);
-    //drawYscale();
     ctx.restore();
   }
 
   private drawXaxis(ctx, width, height) {
     ctx.beginPath();
     ctx.strokeStyle = this.axisColor;
+    ctx.lineWidth = 1;
     ctx.moveTo(0,height/2);
     ctx.lineTo(width, height/2);
+
+    let i : number;
+    for (i = -20; i < 20; i++) {
+      ctx.moveTo(width/2 + 2*i*this.scale, height/2 - 3);
+      ctx.lineTo(width/2 + 2*i*this.scale, height/2 + 3);
+    }
+
     ctx.stroke();
   }
 
   private drawYaxis(ctx, width, height) {
     ctx.beginPath();
     ctx.strokeStyle = this.axisColor;
+    ctx.lineWidth = 1;
     ctx.moveTo(width/2,0);
     ctx.lineTo(width/2,height);
+
+    let i : number;
+    for (i = -20; i < 20; i++) {
+      ctx.moveTo(width/2 - 3, height/2 + 2*i*this.scale);
+      ctx.lineTo(width/2 + 3, height/2 + 2*i*this.scale);
+    }
+
     ctx.stroke();
   }
 
@@ -98,5 +103,11 @@ export class PoseviewComponent implements OnInit {
 
   private getActualAxisPosition(pos) : number {
     return pos * this.scale + this.maxDist/2;
+  }
+
+  private setScaleIfOutOfBounds(x, y, canvas) {
+    if ((x > canvas.width - 15 || y > canvas.height - 15 || x < 15 || y < 15) && this.scale > 1) {
+      this.scale = this.scale - 0.01;
+    }
   }
 }
