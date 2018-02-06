@@ -30,6 +30,25 @@
   font-size: 18px;
 }
 
+.some-label-3 {
+  color: #9376B5;
+  position: relative;
+  top: -305px;
+  left: 70px;
+  font-size: 18px;
+}
+
+.some-label-4 {
+  color: #757575;
+}
+
 .speed-widget-container {
   height: 200px;
+}
+
+
+.angular-widget-container {
+  height: 200px;
+  position: relative;
+  top: -20px;
 }

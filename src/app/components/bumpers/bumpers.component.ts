@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RosService} from '../../services/RosService';
+import {RandomService} from '../../services/RandomService';
 
 @Component({
   selector: 'app-bumpers',
@@ -12,8 +13,12 @@ export class BumpersComponent implements OnInit {
   private leftBumperState = 0;
   private rightBumperState = 0;
   private centerBumperState = 0;
+  collisionLabel = '';
+  randStatus = 42;
+  randomBump = 20385348925;
+  randomBump2 = 340569456;
 
-  constructor(ros: RosService) {
+  constructor(ros: RosService, randomService: RandomService) {
     ros.getBumperObservable().subscribe(event => {
       if (event.bumper === 0) {
         this.leftBumperState = event.state;
@@ -23,8 +28,21 @@ export class BumpersComponent implements OnInit {
         this.centerBumperState = event.state;
       }
 
+      if (event.state === 1) {
+        this.collisionLabel = 'COLLISION IMMINENT';
+      } else {
+        this.collisionLabel = '';
+      }
+
       this.drawTurtlebot();
     });
+
+    randomService.getRandomGeneratorObservable(0, 50, 3000)
+      .subscribe(rand => this.randStatus = rand);
+    randomService.getRandomGeneratorObservable(100000000000, 900000000000)
+      .subscribe(rand => this.randomBump = rand);
+    randomService.getRandomGeneratorObservable(100000000000, 900000000000)
+      .subscribe(rand => this.randomBump2 = rand);
   }
 
   ngOnInit() {
