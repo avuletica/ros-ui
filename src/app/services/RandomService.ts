@@ -10,11 +10,21 @@ export class RandomService {
   constructor() {
   }
 
+  /**
+   *  This function generates observable with stream of random number. The interval is not disposed
+   *  from memory.
+   *
+   * @param {number} minNumber - Minimal number of range
+   * @param {number} maxNumber - Maximal number of range
+   * @param {number} tickDelay - Optional parameter to set exact time interval
+   *  if tickDelay is left 0, interval is randomized each tick from 300ms to 4s.
+   * @returns {Observable<number>}
+   */
   public getRandomGeneratorObservable(minNumber: number, maxNumber: number, tickDelay: number = 0) {
     const sub = new Subject<number>();
     const tick = tickDelay === 0 ? RandomService.getRandomDelay() : tickDelay;
 
-    const interval = setInterval(
+    setInterval(
       () => {
         sub.next(RandomService.getRandomNumber(minNumber, maxNumber));
       }, tick);
