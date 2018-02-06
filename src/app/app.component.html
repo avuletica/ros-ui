@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app" style="text-align:center">
-  <div fxLayout="row" style="margin-bottom: 70px">
+  <div fxLayout="row" style="margin-bottom: 40px">
     <app-topbar fxFill></app-topbar>
   </div>
 
@@ -9,21 +9,21 @@
     <app-poseview fxFlex="40"></app-poseview>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 35px; ">
+  <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 15px; ">
     <div fxFlex="25" class="custom-border">
-      <div class="custom-card-heading">Bumpers</div>
+      <div class="custom-card-heading">BUMPERS</div>
       <app-bumpers></app-bumpers>
     </div>
 
-    <div fxFlex="25" f class="custom-border">
-      <div class="custom-card-heading" style="margin-bottom: 20px">Angular / Velocity</div>
+    <div fxFlex="25" class="custom-border" style="border-color: #CE9812">
+      <div class="custom-card-heading" style="margin-bottom: 20px; background-color: #CE9812">VELOCITY</div>
       <div class="custom-font">
         <app-speed-widget></app-speed-widget>
       </div>
     </div>
 
-    <div fxFlex="25" class="custom-border">
-      <div class="custom-card-heading" style="margin-bottom: 20px">Position</div>
+    <div fxFlex="25" class="custom-border" style="border-color: #cf9468">
+      <div class="custom-card-heading" style="margin-bottom: 20px; background-color: #cf9468">POSITION</div>
       <div class="custom-font">Position X: {{position?.position?.x | number : '1.4'}}</div>
       <div class="custom-font">Position Y: {{position?.position?.y | number : '1.4'}}</div>
       <div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div>
