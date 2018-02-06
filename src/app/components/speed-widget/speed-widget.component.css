@@ -1,0 +1,35 @@
+.speed {
+  color: black;
+  position: relative;
+  top: -130px;
+  left: -95px;
+  font-size: 35px;
+}
+
+.speed-label {
+  color: #A2A530;
+  position: relative;
+  top: -230px;
+  left: 70px;
+  font-size: 35px;
+}
+
+.some-label {
+  color: #9B8D4B;
+  position: relative;
+  top: -280px;
+  left: 70px;
+  font-size: 18px;
+}
+
+.some-label-2 {
+  color: #937665;
+  position: relative;
+  top: -305px;
+  left: 70px;
+  font-size: 18px;
+}
+
+.speed-widget-container {
+  height: 200px;
+}

@@ -10,6 +10,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {RosService} from './services/RosService';
+import { SpeedWidgetComponent } from './components/speed-widget/speed-widget.component';
+import {RandomService} from './services/RandomService';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,14 @@ import {RosService} from './services/RosService';
     TopbarComponent,
     BumpersComponent,
     CamviewComponent,
-    PoseviewComponent
+    PoseviewComponent,
+    SpeedWidgetComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule
   ],
-  providers: [RosService],
+  providers: [RosService, RandomService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
