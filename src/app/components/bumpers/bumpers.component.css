@@ -1,3 +1,7 @@
+.warning-container {
+  margin-top: 15px;
+}
+
 .warning {
   background-color: red;
   color: white;

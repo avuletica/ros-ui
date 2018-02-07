@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RosService} from '../../services/RosService';
-import {Twist} from '../../models/Twis45915142115454t';
+import {Twist} from '../../models/Twist';
 import {RandomService} from '../../services/RandomService';
 
 @Component({
