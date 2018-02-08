@@ -1,0 +1,38 @@
+#indicator-container {
+    margin-top: 40px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.indicator {
+    width: 50px;
+    height: 75px;
+    transition: border 0.5s; 
+}
+
+#indicator-fwd {
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;    
+    border-bottom: 75px solid #A2A53060;
+    border-radius: 25px;
+}
+
+#indicator-bwd {
+    margin-top: 10px;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;    
+    border-top: 75px solid #A2A53060;
+    border-radius: 25px;
+}
+
+.active-fwd-indicator {
+    border-bottom: 75px solid #A2A530 !important;
+}
+
+.active-bwd-indicator {
+    border-top: 75px solid #A2A530 !important;
+}

@@ -30,14 +30,63 @@ body {
 
 .custom-border {
   border: 1px solid #6E00EB;
+  border-top: none;
   border-radius: 10px;
 }
 
 .custom-card-heading {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-bottom: 5px;
+}
+
+.custom-border:nth-of-type(1) > .custom-card-heading {
   background: #6E00EB;
-  font-size: 30px;
+}
+
+.custom-border:nth-of-type(2) > .custom-card-heading {
+  background: #CE9812;
+  margin-bottom: 20px;
+}
+
+.custom-border:nth-of-type(3) > .custom-card-heading {
+  background: #cf9468;
+  margin-bottom: 20px;
+}
+
+.custom-border:nth-of-type(1) .heading {
+  background-color: black;
+  color: #6E00EB;
+}
+
+.custom-border:nth-of-type(2) .heading {
+  background-color: black;
+  color: #CE9812;
+}
+
+.custom-border:nth-of-type(3) .heading {
+  background-color: black;
+  color: #cf9468;
+}
+
+.heading {
+  padding: 0 5px;
+}
+
+.position-container .custom-font {
+  font-size: 25px;
+}
+
+.position-container .custom-font:nth-of-type(2) {
+  background-color: #A2A53025;
+}
+
+.position-container .custom-font:nth-of-type(3) {
+  background-color: #564FFF25;
 }
 
 .camera-container {

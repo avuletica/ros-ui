@@ -12,6 +12,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {RosService} from './services/RosService';
 import { SpeedWidgetComponent } from './components/speed-widget/speed-widget.component';
 import {RandomService} from './services/RandomService';
+import { MovementIndicatorComponent } from './components/movement-indicator/movement-indicator.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {RandomService} from './services/RandomService';
     BumpersComponent,
     CamviewComponent,
     PoseviewComponent,
-    SpeedWidgetComponent
+    SpeedWidgetComponent,
+    MovementIndicatorComponent
   ],
   imports: [
     BrowserModule,

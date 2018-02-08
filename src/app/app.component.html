@@ -11,22 +11,23 @@
 
   <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 15px; ">
     <div fxFlex="25" class="custom-border">
-      <div class="custom-card-heading">BUMPERS</div>
+      <div class="custom-card-heading"><span class="heading">BUMPERS</span></div>
       <app-bumpers></app-bumpers>
     </div>
 
     <div fxFlex="25" class="custom-border" style="border-color: #CE9812">
-      <div class="custom-card-heading" style="margin-bottom: 20px; background-color: #CE9812">VELOCITY</div>
+      <div class="custom-card-heading"><span class="heading">VELOCITY</span></div>
       <div class="custom-font">
         <app-speed-widget></app-speed-widget>
       </div>
     </div>
 
-    <div fxFlex="25" class="custom-border" style="border-color: #cf9468">
-      <div class="custom-card-heading" style="margin-bottom: 20px; background-color: #cf9468">POSITION</div>
-      <div class="custom-font">Position X: {{position?.position?.x | number : '1.4'}}</div>
-      <div class="custom-font">Position Y: {{position?.position?.y | number : '1.4'}}</div>
-      <div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div>
+    <div fxFlex="25" class="custom-border position-container" style="border-color: #cf9468">
+      <div class="custom-card-heading"><span class="heading">POSITION</span></div>
+      <div class="custom-font">X  =  {{position?.position?.x | number : '1.4'}}</div>
+      <div class="custom-font">Y  =  {{position?.position?.y | number : '1.4'}}</div>
+      <app-movement-indicator></app-movement-indicator>
+      <!--div class="custom-font">Position Z: {{position?.position?.z | number : '1.4'}}</div-->
     </div>
   </div>
 

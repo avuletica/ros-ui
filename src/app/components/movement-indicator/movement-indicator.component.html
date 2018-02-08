@@ -1,0 +1,4 @@
+<div id="indicator-container">
+  <div class="indicator" id="indicator-fwd" [ngClass]="{'active-fwd-indicator' : velocity?.linear?.x > 0}"></div>
+  <div class="indicator" id="indicator-bwd" [ngClass]="{'active-bwd-indicator' : velocity?.linear?.x < 0}"></div>
+</div>
