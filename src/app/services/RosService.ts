@@ -7,17 +7,20 @@ import {BumperEvent} from '../models/BumperEvent';
 import * as ROSLIB from 'roslib';
 import {Ros, Topic} from 'roslib';
 import {Pose} from '../models/Pose';
+import { CameraInfo } from '../models/CameraInfo';
 
 @Injectable()
 export class RosService {
   private _twistSubject: Subject<Twist>;
   private _poseSubject: Subject<Pose>;
   private _bumperSubject: Subject<BumperEvent>;
+  private _camInfoSubject: Subject<CameraInfo>;
 
   constructor() {
     this._twistSubject = new Subject<Twist>();
     this._poseSubject = new Subject<Pose>();
     this._bumperSubject = new Subject<BumperEvent>();
+    this._camInfoSubject = new Subject<CameraInfo>();
     this.setupRos();
   }
 
@@ -31,6 +34,10 @@ export class RosService {
 
   public getBumperObservable(): Observable<BumperEvent> {
     return this._bumperSubject.asObservable();
+  }
+
+  public getCamInfoObservable(): Observable<CameraInfo> {
+    return this._camInfoSubject.asObservable();
   }
 
   private setupRos() {
@@ -63,6 +70,13 @@ export class RosService {
           const bumper = BumperEvent.getInstanceFromMessage(message);
           this._bumperSubject.next(bumper);
         });
+
+      RosService
+      .listenTo(ros, '/camera/rgb/camera_info', 'sensor_msgs/CameraInfo')
+      .subscribe(message => {
+        const camInfo = CameraInfo.getInstanceFromMessage(message);
+        this._camInfoSubject.next(camInfo);
+      });
     });
 
     ros.on('close', function () {

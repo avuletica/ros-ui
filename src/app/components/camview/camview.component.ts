@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { RosService } from '../../services/RosService';
+import { CameraInfo } from '../../models/CameraInfo';
 declare const MJPEGCANVAS: any;
 
 @Component({
@@ -8,12 +10,16 @@ declare const MJPEGCANVAS: any;
 })
 export class CamviewComponent implements OnInit {
 
-  constructor() {
+  private camInfo : CameraInfo;
+
+  constructor(ros: RosService) {
+    ros.getCamInfoObservable().subscribe(camInfo => {
+      this.camInfo = camInfo;
+    });
   }
 
   ngOnInit() {
     // Create the main viewer.
-
     const viewer = new MJPEGCANVAS.Viewer({
       divID: 'mjpeg',
       host: 'localhost',

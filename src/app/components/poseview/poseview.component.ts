@@ -40,7 +40,8 @@ export class PoseviewComponent implements OnInit {
     const ctxHeight = canvas.height;
     ctx.clearRect(0, 0, ctxWidth, ctxHeight);
     ctx.save();
-
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     this.drawXaxis(ctx, ctxWidth, ctxHeight);
     this.drawYaxis(ctx, ctxWidth, ctxHeight);
     ctx.restore();

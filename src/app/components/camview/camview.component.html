@@ -5,4 +5,12 @@
   <div class="camera-container">
     <div id="mjpeg"></div>
   </div>
+  <div id="cam-info">
+    <span>Video resolution: </span>
+    <span>{{camInfo?.width}}</span>
+    <span>x</span>
+    <span>{{camInfo?.height}}</span>
+    <span>| Distorsion model:</span>
+    <span>{{camInfo?.distortion_model}}</span>
+  </div>
 </div>

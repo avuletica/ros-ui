@@ -22,3 +22,8 @@
     background-color: #564FFF;
     display: inline-block;
 }
+
+#cam-info {
+    height: 25px;
+    background-color: #6E00EB;
+}

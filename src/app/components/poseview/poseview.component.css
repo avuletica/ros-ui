@@ -1,3 +1,25 @@
+.poseview-container {
+    padding: 0 5px 5px 5px;
+    background-color: #564FFF;
+    border-radius: 15px 15px 0 0;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: inline-block;
+    background-color: #564FFF;
+    padding-bottom: 5px;
+    margin: 0 10px 0 25px;
+}
+
+.poseview-title {
+    background-color: black;
+    color: #564FFF;
+    padding: 0 5px;
+    float: left;
+}
+
 #canvas-poseview {
     transform: scaleY(-1);
 }
