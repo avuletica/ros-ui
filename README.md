@@ -32,8 +32,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * Launch gazebo with turtlebot world: `roslaunch turtlebot_gazebo turtlebot_world.launch`
 
+* Launch gazebo mapping: `roslaunch turtlebot_gazebo gmapping_demo.launch`
+
 * Start keyboard_teleop for turtlebot: `roslaunch turtlebot_teleop keyboard_teleop.launch`
 
 * Start rosbridge_server: `roslaunch rosbridge_server rosbridge_websocket.launch`
 
 * Start web_videoserver: `rosrun web_video_server web_video_server`
+
+* Start pose publisher: `rosrun robot_pose_publisher robot_pose_publisher`
