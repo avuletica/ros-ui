@@ -13,6 +13,7 @@ import {RosService} from './services/RosService';
 import { SpeedWidgetComponent } from './components/speed-widget/speed-widget.component';
 import {RandomService} from './services/RandomService';
 import { MovementIndicatorComponent } from './components/movement-indicator/movement-indicator.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MovementIndicatorComponent } from './components/movement-indicator/move
     CamviewComponent,
     PoseviewComponent,
     SpeedWidgetComponent,
-    MovementIndicatorComponent
+    MovementIndicatorComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

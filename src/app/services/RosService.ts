@@ -15,12 +15,14 @@ export class RosService {
   private _poseSubject: Subject<Pose>;
   private _bumperSubject: Subject<BumperEvent>;
   private _camInfoSubject: Subject<CameraInfo>;
+  private _mapDataSubject: Subject<Array<number>>;
 
   constructor() {
     this._twistSubject = new Subject<Twist>();
     this._poseSubject = new Subject<Pose>();
     this._bumperSubject = new Subject<BumperEvent>();
     this._camInfoSubject = new Subject<CameraInfo>();
+    this._mapDataSubject = new Subject<Array<number>>();
     this.setupRos();
   }
 
@@ -38,6 +40,10 @@ export class RosService {
 
   public getCamInfoObservable(): Observable<CameraInfo> {
     return this._camInfoSubject.asObservable();
+  }
+
+  public getMapObservable(): Observable<Array<number>> {
+    return this._mapDataSubject.asObservable();
   }
 
   private setupRos() {
@@ -76,6 +82,13 @@ export class RosService {
       .subscribe(message => {
         const camInfo = CameraInfo.getInstanceFromMessage(message);
         this._camInfoSubject.next(camInfo);
+      });
+
+      RosService
+      .listenTo(ros, '/map', 'nav_msgs/OccupancyGrid')
+      .subscribe(message => {
+        const mapData = message['data'];
+        this._mapDataSubject.next(mapData);
       });
     });
 
