@@ -1,0 +1,29 @@
+
+.title-container {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-bottom: 5px;
+    background: #A2A530;
+  }
+  
+  #map {
+    display: inline-flex;
+    flex-direction: column;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #A2A530;
+  }
+  
+  .map-title {
+    padding: 0 5px;
+    background-color: black;
+    color: #A2A530;
+  }
+
+  .map-container {
+    padding: 0 5px;
+  }

@@ -37,9 +37,7 @@ export class MapComponent implements OnInit {
       viewer : viewer,
       topic : '/map',
       robot_pose : '/robot_pose',
-      withOrientation: true,
       continuous: true,
-      image: true
     });
   }
 

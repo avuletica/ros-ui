@@ -44,29 +44,6 @@ body {
   padding-bottom: 5px;
 }
 
-.custom-card-heading-2 {
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 25px;
-  padding-bottom: 5px;
-  background: #A2A530;
-}
-
-.custom-border-2 {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 1px solid #A2A530;
-}
-
-.heading-2 {
-  padding: 0 5px;
-  background-color: black;
-  color: #A2A530;
-}
-
 .custom-border:nth-of-type(1) > .custom-card-heading {
   background: #DC5601;
 }

@@ -1,21 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app" style="text-align:center">
-  <div fxLayout="row" style="margin-bottom: 100px">
+  <div fxLayout="row" style="margin-bottom: 60px">
     <app-topbar fxFill></app-topbar>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="left">
     <app-camview fxFlex="40" fxFlexOffset="10"></app-camview>
-    <div fxFlex="30" class="custom-border position-container"
-         style="border: 1px solid #DC5601;  border-top: none;  border-radius: 10px;">
-      <div class="custom-card-heading"><span class="heading">POSITION</span></div>
-      <app-map></app-map>
-    </div>
+    <app-map fxFlex="40"></app-map>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 60px;">
-    <div fxFlex="25" class="custom-border-2">
-      <div class="custom-card-heading-2"><span class="heading-2">BUMPERS</span></div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly top" style="margin-top: 20px;">
+    <div fxFlex="25" class="custom-border" style="border-color: #DC5601">
+      <div class="custom-card-heading"><span class="heading">BUMPERS</span></div>
       <app-bumpers></app-bumpers>
     </div>
 
